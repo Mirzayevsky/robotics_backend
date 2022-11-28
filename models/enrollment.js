@@ -41,7 +41,6 @@ function validateEnrollment(enrollment) {
     customerId: Joi.string().required(),
     courseId: Joi.string().required()
   };
-
   return Joi.validate(enrollment, schema);
 }
 

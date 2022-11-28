@@ -1,3 +1,4 @@
 {
-    "jwtPrivateKey": "uzbekRobotic_jwtPrivateKey"
+    "jwtPrivateKey": "robtics22_jwtPrivateKey",
+     "db":"robtics22_connstring"
 }
