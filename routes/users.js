@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 
   let user = await User.findOne({ email: req.body.email });
   if (user)
-    return res.status(400).send('Mavjud bo\'lgan foydalanuvchi');
+    return res.status(400).send('An existing user');
 
   user = new User(_.pick(req.body, ['name', 'email', 'password', 'isAdmin']));
   const salt = await bcrypt.genSalt();

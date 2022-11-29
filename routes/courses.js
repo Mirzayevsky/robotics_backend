@@ -17,7 +17,7 @@ router.post('/', auth, async (req, res) => {
 
   const category = await Category.findById(req.body.categoryId);
   if (!category)
-    return res.status(400).send('Berilgan IDga teng bo\'lgan toifa topilmadi.');
+    return res.status(400).send('No category equal to the given ID was found.');
 
   let course = new Course({
     title: req.body.title,
@@ -41,7 +41,7 @@ router.put('/:id', auth, async (req, res) => {
 
   const category = await Category.findById(req.body.categoryId);
   if (!category)
-    return res.status(400).send('Berilgan IDga teng bo\'lgan toifa topilmadi.');
+    return res.status(400).send('No category equal to the given ID was found.');
 
   const course = await Course.findByIdAndUpdate(req.params.id,
     {
@@ -57,7 +57,7 @@ router.put('/:id', auth, async (req, res) => {
     }, { new: true });
 
   if (!course)
-    return res.status(404).send('Berilgan IDga teng bo\'lgan kurs topilmadi.');
+    return res.status(404).send('No course matching the given ID was found.');
 
   res.send(course);
 });
@@ -65,7 +65,7 @@ router.put('/:id', auth, async (req, res) => {
 router.delete('/:id', auth, async (req, res) => {
   const course = await Course.findByIdAndRemove(req.params.id);
   if (!course)
-    return res.status(404).send('Berilgan IDga teng bo\'lgan kurs topilmadi.');
+    return res.status(404).send('');
 
   res.send(course);
 });
@@ -73,7 +73,7 @@ router.delete('/:id', auth, async (req, res) => {
 router.get('/:id', async (req, res) => {
   const course = await Course.findById(req.params.id);
   if (!course)
-    return res.status(404).send('Berilgan IDga teng bo\'lgan kurs topilmadi.');
+    return res.status(404).send('No course matching the given ID was found.');
 
   res.send(course);
 });

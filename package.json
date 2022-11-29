@@ -1,7 +1,7 @@
 {
-  "name": "virtualdars",
+  "name": "robotics22",
   "version": "1.1.1",
-  "description": "24-Topshiriq.",
+  "description": "robotics22 server app",
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
@@ -12,14 +12,14 @@
     "node": "10.17.0"
   },
   "keywords": [
-    "virtualdars",
-    "dasturlash",
+    "robotics22",
+    "programming",
     "nodejs",
     "hashing",
     "password",
     "jwt"
   ],
-  "author": "Farkhod Dadajanov",
+  "author": "Sirojiddin Mirzayev",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^4.0.1",

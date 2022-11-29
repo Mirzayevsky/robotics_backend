@@ -1,4 +1,0 @@
-{
-    "jwtPrivateKey": "1234",
-    "db": "mongodb://localhost/robtics22_tests"
-}

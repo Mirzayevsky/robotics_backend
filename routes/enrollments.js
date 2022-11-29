@@ -18,11 +18,11 @@ router.post('/', auth, async (req, res) => {
 
   const customer = await Customer.findById(req.body.customerId);
   if (!customer)
-    return res.status(404).send('Berilgan IDga teng bo\'lgan mijoz topilmadi');
+    return res.status(404).send('No client found matching the given ID');
 
   const course = await Course.findById(req.body.courseId);
   if (!course)
-    return res.status(404).send('Berilgan IDga teng bo\'lgan kurs topilmadi.');
+    return res.status(404).send('No course matching the given ID was found.');
 
   let enrollment = new Enrollment({
     customer: {
@@ -36,7 +36,7 @@ router.post('/', auth, async (req, res) => {
     courseFee: course.fee
   });
   if (customer.isVip)
-    enrollment.courseFee = course.fee - (0.2 * course.fee); //Vip mijozlarga 20% chegirma
+    enrollment.courseFee = course.fee - (0.2 * course.fee); //discount for vip customers
 
   enrollment = await enrollment.save();
 
@@ -50,7 +50,7 @@ router.get('/:id', async (req, res) => {
   const enrollment = await Enrollment.findById(req.params.id);
 
   if (!enrollment)
-    return res.status(404).send('Berilgan IDga teng bo\'lgan qabul topilmadi.');
+    return res.status(404).send('No receipt was found equal to the given ID.');
 
   res.send(enrollment);
 });

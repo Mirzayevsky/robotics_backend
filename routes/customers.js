@@ -27,7 +27,7 @@ router.post('/', auth, async (req, res) => {
 router.get('/:id', async (req, res) => {
     let customer = await Customer.findById(req.params.id);
     if (!customer)
-        return res.status(404).send('Berilgan IDga teng bo\'lgan mijoz topilmadi');
+        return res.status(404).send('No client found matching the given ID');
 
     res.send(customer);
 });
@@ -42,7 +42,7 @@ router.put('/:id', auth, async (req, res) => {
     });
 
     if (!customer)
-        return res.status(404).send('Berilgan IDga teng bo\'lgan mijoz topilmadi');
+        return res.status(404).send('No client found matching the given ID');
 
     res.send(customer);
 });
@@ -50,7 +50,7 @@ router.put('/:id', auth, async (req, res) => {
 router.delete('/:id', auth, async (req, res) => {
     let customer = await Customer.findByIdAndRemove(req.params.id);
     if (!customer)
-        return res.status(404).send('Berilgan IDga teng bo\'lgan mijoz topilmadi');
+        return res.status(404).send('No client found matching the given ID');
 
     res.send(customer);
 });
