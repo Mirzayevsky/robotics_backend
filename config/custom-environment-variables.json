@@ -1,4 +1,4 @@
 {
-    "jwtPrivateKey": "robotics22_jwtPrivateKey",
-     "db":""
+    "jwtPrivateKey": "robtics22_jwtPrivateKey",
+     "db":"mongodb://localhost/robtics22"
 }

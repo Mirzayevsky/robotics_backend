@@ -1,4 +1,4 @@
 {
     "jwtPrivateKey":"robotics22_jwtPrivateKey",
-    "db": ""
+    "db": "mongodb+srv://robotics22:<UE9pxg78JARoyzuZ>@cluster0.xu5jbbh.mongodb.net/?retryWrites=true&w=majority"
 }
