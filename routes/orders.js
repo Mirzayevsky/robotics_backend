@@ -21,6 +21,7 @@ router.post('/', auth, async (req, res) => {
 
   let order = new Order({
     title: req.body.title,
+    courseTitle:req.body.courseTitle,
     category: {
       _id: category._id,
       name: category.name
@@ -46,6 +47,7 @@ router.put('/:id', auth, async (req, res) => {
   const order = await Order.findByIdAndUpdate(req.params.id,
     {
       title: req.body.title,
+      courseTitle:req.body.courseTitle,
       category: {
         _id: category._id,
         name: category.name

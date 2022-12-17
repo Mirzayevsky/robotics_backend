@@ -11,6 +11,12 @@ const Order = mongoose.model(
       minlength: 3,
       maxlength: 50,
     },
+    courseTitle: {
+      type: String,
+      required: true,
+      minlength: 3,
+      maxlength: 50,
+    },
     contact: {
       type: Number,
       required: true,
@@ -39,6 +45,7 @@ const Order = mongoose.model(
 function validateOrder(order) {
   const schema = {
     title: Joi.string().min(3).max(50).required(),
+    courseTitle: Joi.string().min(3).max(50).required(),
     contact: Joi.number().min(12),
     categoryId: Joi.string().required(),
     status: Joi.string().required(),
